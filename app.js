@@ -218,11 +218,19 @@ setInterval(function () {
 var fs = require('fs');
 
 setInterval(function () {
+
+    try{
+        io.emit('printMeas', JSON.parse(fs.readFileSync('./message.json')));
+    }catch (error){
+        console.log("From parser error", error);
+    }
+
+/*
     var data_t = fs.readFileSync('./message.json');
     var data = JSON.parse(data_t);
 
     io.emit('printMeas', data);
-
+*/
 }, 2500);
 
 module.exports = app;
