@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html ng-app="exercises">
+
+<head>
+    <link rel="stylesheet" href="stylesheets/bootstrap.min.css"/>
+    <script src="javascripts/jquery.min.js"></script>
+    <script src="javascripts/angular.js"></script>
+    <script src="javascripts/angular-animate.js"></script>
+    <script src="javascripts/angular-messages.js"></script>
+    <script src="javascripts/angular-ui-router.js"></script>
+    <!--   <script src="javascripts/require.js"></script> -->
+
+    <script src="/socket.io/socket.io.js"></script>
+
+    <link rel="stylesheet" href="stylesheets/style.css"/>
+    <link rel="stylesheet" href="stylesheets/bootstrap2.min.css"/>
+
+    <script src="script.js"></script>
+</head>
+
+<body class="container" ng-controller="MainCtrl as main">
+
+<h1>{{main.title}}</h1>
+
+<div class="alert alert-success" role="alert" ng-if="main.cur_mea">
+    Current Item: <strong>{{main.cur_mea.kks}}</strong>
+    <button type="button" class="close" ng-click="main.setCurrentItem(null)">&times;</button>
+</div>
+<hr/>
+<div class="well item" ng-repeat="item in main.meas" ng-click="main.setCurrentItem(item)">
+
+    <table>
+        <tr>
+            <td style='width: 200px'>
+                <img src="{{item.compass.link}}" alt=""/>
+            </td>
+            <td style='width: 200px'>
+                <table>
+                    <tr>
+                        <td style='width: 100px'><h3>Канал:</h3></td>
+                        <td style='width: 100px'><h3>{{item.kks}}</h3></td>
+                    </tr>
+                    <tr>
+                        <td style='width: 100px'><h3>Высота:</h3></td>
+                        <td style='width: 100px'><h3> {{item.high}} </h3></td>
+                    </tr>
+                </table>
+            </td>
+            <td>
+                <table>
+                    <tr>
+                        <td style='width: 200px'><h3>Температура:</h3></td>
+                        <td style='width: 100px'><h3>{{item.mea_t}}</h3></td>
+                    </tr>
+                    <tr>
+                        <td style='width: 200px'><h3>Скорость ветра:</h3></td>
+                        <td style='width: 100px'><h3> {{item.mea_speed}} </h3></td>
+                    </tr>
+                </table>
+            </td>
+        </tr>
+    </table>
+    <h5>{{item.compass.text}}</h5>
+    <h5>{{item.quality_text}}</h5>
+
+    <div ng-messages="item">
+        <div ng-message="warning" class="alert alert-warning" role="alert">
+            ПРЕВЫШЕНА ПРЕДУПРЕДИТЕЛЬНАЯ УСТАВКА!!!
+        </div>
+        <div ng-message="alert" class="alert alert-danger" role="alert">
+            ПРЕВЫШЕНА АВАРИЙНАЯ УСТАВКА!!!
+        </div>
+    </div>
+
+    <!--    <h2> {{item}}</h2>
+    -->
+</div>
+
+
+</body>
+
+</html>

@@ -1,0 +1,38 @@
+{
+  "mea1" : {
+    "kks" : "KKS1",
+    "mea_t" : "1.0e+10",
+    "mea_speed" : "1.0e+10",
+    "quality" : "1",
+    "threshold" : "0",
+    "high" : "8",
+    "way" : "e"
+  },
+  "mea2" : {
+    "kks" : "KKS2",
+    "mea_t" : "2.0e+10",
+    "mea_speed" : "2.0e+10",
+    "quality" : "0",
+    "threshold" : "1",
+    "high" : "30",
+    "way" : "se"
+  },
+  "mea3" : {
+    "kks" : "KKS3",
+    "mea_t" : "3.0e+10",
+    "mea_speed" : "3.0e+10",
+    "quality" : "1",
+    "threshold" : "2",
+    "high" : "60",
+    "way" : "n"
+  },
+  "mea4" : {
+    "kks" : "KKS4",
+    "mea_t" : "4.0e+10",
+    "mea_speed" : "4.0e+10",
+    "quality" : "1",
+    "threshold" : "2",
+    "high" : "120",
+    "way" : "nw"
+  }
+}
