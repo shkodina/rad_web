@@ -105,4 +105,10 @@ angular.module('exercises', [
 	return {
 		templateUrl : 'item.tmpl.html'
 	}
-});
+})
+.directive('myitem', function () {
+	return {
+		templateUrl : 'myitem.tmpl.html'
+	}
+})
+;

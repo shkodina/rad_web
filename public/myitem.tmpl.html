@@ -1,0 +1,51 @@
+<table>
+    <tr>
+        <td style='width: 200px'>
+            <img src="{{myitem.compass.link}}" alt=""/>
+        </td>
+        <td style='width: 300px'>
+            <table>
+                <tr>
+                    <td style='width: 50px'><h1>Канал:</h1></td>
+                    <td ><h1>{{myitem.kks}}</h1></td>
+                </tr>
+                <tr>
+                    <td style='width: 50px'><h1>Время:</h1></td>
+                    <td ><h1>{{myitem.date}}</h1></td>
+                </tr>
+                <tr>
+                    <td style='width: 50px'><h1>Высота:</h1></td>
+                    <td ><h1> {{myitem.high}} м.</h1></td>
+                </tr>
+            </table>
+        </td>
+        <td>
+            <table>
+                <tr>
+                    <td style='width: 250px'><h1>Температура:</h1></td>
+                    <td style='width: 250px'><h1>{{myitem.mea_t}}&deg;C</h1></td>
+                </tr>
+                <tr>
+                    <td style='width: 250px'><h1>Скорость ветра:</h1></td>
+                    <td style='width: 250px'><h1> {{myitem.mea_speed}} м/с</h1></td>
+                </tr>
+                <tr>
+                    <td style='width: 250px'><h1>Азимут:</h1></td>
+                    <td style='width: 250px'><h1> {{myitem.angle}}&deg;</h1></td>
+                </tr>
+
+            </table>
+        </td>
+    </tr>
+</table>
+<h3>{{myitem.compass.text}}</h3>
+<h3>{{myitem.quality_text}}</h3>
+
+<div ng-messages="myitem">
+    <div ng-message="warning" class="alert alert-warning" role="alert">
+        ПРЕВЫШЕНА ПРЕДУПРЕДИТЕЛЬНАЯ УСТАВКА!!!
+    </div>
+    <div ng-message="alert" class="alert alert-danger" role="alert">
+        ПРЕВЫШЕНА АВАРИЙНАЯ УСТАВКА!!!
+    </div>
+</div>
