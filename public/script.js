@@ -39,15 +39,15 @@ angular.module('exercises', [
 
 		function getCompasByAngle(angle) {
 			var compass = valueService.getCompass();
-			console.log('getCompasByAngle = ', angle);
+			//console.log('getCompasByAngle = ', angle);
 			var delta = 22.5;
 			for (var i in compass) {
 				var right =  + (compass[i].angle) + delta;
 				var left =  + (compass[i].angle) - delta;
 				left = (left > 0) ? left : (360.0 + left);
 
-				console.log('getCompasByAngle left = ', left);
-				console.log('getCompasByAngle right = ', right);
+				//console.log('getCompasByAngle left = ', left);
+				//console.log('getCompasByAngle right = ', right);
 
 				
 				if (left > right) { // fucking north
@@ -70,6 +70,8 @@ angular.module('exercises', [
 
 			mes[index].quality_text = (mes[index].quality == "0") ? "Измерение недостоверно" : " ";
 
+			console.log("threshold = ", mes[index].threshold)
+			
 			if (mes[index].threshold == "1") {
 				mes[index].warning = true;
 			}

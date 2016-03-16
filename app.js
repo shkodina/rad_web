@@ -182,10 +182,12 @@ io.on('connection', function (socket) {
 
 var fs = require('fs');
 
+var mea_generator = require('./random_data_generator.js');
 setInterval(function () {
 
     try{
-        io.emit('printMeas', JSON.parse(fs.readFileSync('./message.json')));
+        //io.emit('printMeas', JSON.parse(fs.readFileSync('./message.json')));
+        io.emit('printMeas', mea_generator.generateNew(24));
     }catch (error){
         console.log("From parser error", error);
     }
