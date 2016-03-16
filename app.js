@@ -183,15 +183,18 @@ io.on('connection', function (socket) {
 var fs = require('fs');
 
 var mea_generator = require('./random_data_generator.js');
+
 setInterval(function () {
 
+    fs.writeFileSync('./message.json', JSON.stringify( mea_generator.generateByOld(JSON.parse(fs.readFileSync('./message.json')))));
+    //fs.writeFileSync('./message.json',JSON.stringify(mea_generator.generateNew(24)));
     try{
-        //io.emit('printMeas', JSON.parse(fs.readFileSync('./message.json')));
-        io.emit('printMeas', mea_generator.generateNew(24));
+        io.emit('printMeas', JSON.parse(fs.readFileSync('./message.json')));
+        //io.emit('printMeas', mea_generator.generateNew(24));
     }catch (error){
         console.log("From parser error", error);
     }
 
-}, 2500);
+}, 5000);
 
 module.exports = app;

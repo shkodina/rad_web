@@ -56,12 +56,24 @@ angular.module('exercises', [
 					}
 				} else {
 					if (angle >= left && angle < right) {
-						console.log('getCompasByAngle return = ', i);
+						//console.log('getCompasByAngle return = ', i);
 
 						return i;
 					}
 				}
 			}
+		}
+
+		function  getStringDateFromTimestamp (timestamp) {
+			var date = new Date(timestamp);
+			var resultstring = ""
+					+ date.getFullYear() + "/"
+					+ date.getMonth() + "/"
+					+ date.getUTCDate() + " "
+					+ date.getHours() + ":"
+					+ date.getMinutes()
+			;
+			return resultstring;
 		}
 
 		for (var index in mes) {
@@ -70,7 +82,7 @@ angular.module('exercises', [
 
 			mes[index].quality_text = (mes[index].quality == "0") ? "Измерение недостоверно" : " ";
 
-			console.log("threshold = ", mes[index].threshold)
+			//console.log("threshold = ", mes[index].threshold)
 			
 			if (mes[index].threshold == "1") {
 				mes[index].warning = true;
@@ -79,12 +91,14 @@ angular.module('exercises', [
 			if (mes[index].threshold == "2") {
 				mes[index].alert = true;
 			}
+
+			mes[index].date = getStringDateFromTimestamp(mes[index].timestamp);
 		}
 
 		$scope.main.meas = mes;
 		$scope.$apply();
 
-		console.log("printMeas", "All Ok");
+		//console.log("printMeas", "All Ok");
 	});
 })
 .directive('item', function () {
