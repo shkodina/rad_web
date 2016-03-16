@@ -2,70 +2,90 @@
 
  */
 angular.module('exercises', [
-        'ui.router',
-        'ngAnimate',
-        'ngMessages'
-    ])
-    .factory('valueService', function ($rootScope, $location) {
+		'ui.router',
+		'ngAnimate',
+		'ngMessages'
+	])
+.factory('valueService', function ($rootScope, $location) {
 
-        var socket = io.connect();
+	var socket = io.connect();
 
-        var compass = {};
-        $.getJSON("compass.json", function (json) {
-            compass = json;
-        });
+	var compass = {};
+	$.getJSON("compass.json", function (json) {
+		compass = json;
+	});
 
-        return {
-            b: function () {
-            },
-            getSocket: function () {
-                return socket;
-            },
-            getCompass: function () {
-                return compass;
-            }
-        }
-    })
-    .controller('MainCtrl', function ($scope, $rootScope, valueService) {
-        this.title = 'RADICO@Web';
+	return {
+		b : function () {},
+		getSocket : function () {
+			return socket;
+		},
+		getCompass : function () {
+			return compass;
+		}
+	}
+})
+.controller('MainCtrl', function ($scope, $rootScope, valueService) {
+	this.title = 'RADICO@Web';
 
-        this.meas = {};
-        this.cur_mea = {};
+	this.meas = {};
+	this.cur_mea = {};
 
-        this.setCurrentItem = function (item) {
-            this.cur_mea = item;
-        };
+	this.setCurrentItem = function (item) {
+		this.cur_mea = item;
+	};
 
-        valueService.getSocket().on('printMeas', function (mes) {
-            //console.log('printMeas', mes);
+	valueService.getSocket().on('printMeas', function (mes) {
 
-            //console.log("compass", compass); // this will show the info it in firebug console
+		function getCompasByAngle(angle) {
+			var compass = valueService.getCompass();
+			console.log('getCompasByAngle = ', angle);
+			var delta = 22.5;
+			for (var i in compass) {
+				var right =  + (compass[i].angle) + delta;
+				var left =  + (compass[i].angle) - delta;
+				left = (left > 0) ? left : (360.0 + left);
 
-            for (var index in mes) {
-                //console.log("mes index",compass[mes[index].way]);
-                mes[index].compass = valueService.getCompass()[mes[index].way];
-                //console.log("mes index compass",mes[index].compass);
+				console.log('getCompasByAngle left = ', left);
+				console.log('getCompasByAngle right = ', right);
 
-                mes[index].quality_text = (mes[index].quality == "0") ? "Измерение недостоверно" : " ";
+				if (left > right) { // fucking north
+					if ((angle >= 0 && angle < right) || (angle >= left && angle < 360)){
+						return i;
+					}
+				} else {
+					if (angle >= left && angle < right) {
+						console.log('getCompasByAngle return = ', i);
 
-                if (mes[index].threshold == "1") {
-                    mes[index].warning = true;
-                }
+						return i;
+					}
+				}
+			}
+		}
 
-                if (mes[index].threshold == "2") {
-                    mes[index].alert = true;
-                }
-            }
+		for (var index in mes) {
+			mes[index].compass = valueService.getCompass()[getCompasByAngle(mes[index].angle)];
+			//console.log("mes index compass",mes[index].compass);
 
-            $scope.main.meas = mes;
-            $scope.$apply();
+			mes[index].quality_text = (mes[index].quality == "0") ? "Измерение недостоверно" : " ";
 
-            console.log("printMeas", "All Ok");
-        });
-    })
-    .directive('item', function () {
-        return {
-            templateUrl: 'item.tmpl.html'
-        }
-    })
-;
+			if (mes[index].threshold == "1") {
+				mes[index].warning = true;
+			}
+
+			if (mes[index].threshold == "2") {
+				mes[index].alert = true;
+			}
+		}
+
+		$scope.main.meas = mes;
+		$scope.$apply();
+
+		console.log("printMeas", "All Ok");
+	});
+})
+.directive('item', function () {
+	return {
+		templateUrl : 'item.tmpl.html'
+	}
+});

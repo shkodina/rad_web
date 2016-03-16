@@ -6,7 +6,8 @@
     "quality" : "1",
     "threshold" : "0",
     "high" : "6",
-    "way" : "e"
+    "angle" : "90"
+	, "timestamp" : "98489413214"
   },
   "mea2" : {
     "kks" : "KKS2",
@@ -15,7 +16,8 @@
     "quality" : "0",
     "threshold" : "1",
     "high" : "30",
-    "way" : "se"
+    "angle" : "45"
+	, "timestamp" : "98489413214"
   },
   "mea3" : {
     "kks" : "KKS3",
@@ -24,7 +26,8 @@
     "quality" : "1",
     "threshold" : "2",
     "high" : "60",
-    "way" : "n"
+    "angle" : "350"
+	, "timestamp" : "98489413214"
   },
   "mea4" : {
     "kks" : "KKS4",
@@ -33,6 +36,7 @@
     "quality" : "1",
     "threshold" : "2",
     "high" : "120",
-    "way" : "nw"
+    "angle" : "270"
+	, "timestamp" : "98489413214"
   }
 }

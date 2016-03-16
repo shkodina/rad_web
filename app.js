@@ -169,51 +169,16 @@ function onListening() {
 //***********************************************************
 //***********************************************************
 
-var counter = {
-    count: 1,
-    inc: function () {
-        this.count += 1;
-    },
-    dec: function () {
-        this.count -= 1;
-    },
-    value: function () {
-        return this.count;
-    }
-}
 
 var io = require('socket.io')(server);
 
 io.on('connection', function (socket) {
-
-    socket.on('sayHello', function (msg) {
-        console.log("from sayHello start");
-        console.log(msg);
-        console.log("from sayHello stop");
-//        tools.groups.add(msg);
-//        io.emit('updateGroups', groups);
-    });
-
-    socket.on('sayOK', function (msg) {
-        console.log("from sayOK start");
-        console.log(msg);
-        console.log("from sayOK stop");
-        io.emit('printMyData', {i: 10, t: 100});
-//        tools.buttons.add(msg.groupId, msg.button);
-//        io.emit('updateGroups', groups);
-    });
 
 });
 
 ///////////////////////////////////////
 //***********************************************************
 //***********************************************************
-
-setInterval(function () {
-    counter.inc();
-    io.emit('printCounter', counter);
-
-}, 1000);
 
 var fs = require('fs');
 
@@ -225,12 +190,6 @@ setInterval(function () {
         console.log("From parser error", error);
     }
 
-/*
-    var data_t = fs.readFileSync('./message.json');
-    var data = JSON.parse(data_t);
-
-    io.emit('printMeas', data);
-*/
 }, 2500);
 
 module.exports = app;

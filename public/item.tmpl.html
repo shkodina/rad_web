@@ -1,5 +1,4 @@
 <div class="well item" ng-click="main.setCurrentItem(myitem)">
-
     <table>
         <tr>
             <td style='width: 200px'>
@@ -10,6 +9,10 @@
                     <tr>
                         <td style='width: 100px'><h3>Канал:</h3></td>
                         <td style='width: 100px'><h3>{{myitem.kks}}</h3></td>
+                    </tr>
+                    <tr>
+                        <td style='width: 100px'><h3>Время:</h3></td>
+                        <td style='width: 100px'><h3>{{myitem.date}}</h3></td>
                     </tr>
                     <tr>
                         <td style='width: 100px'><h3>Высота:</h3></td>
@@ -27,9 +30,14 @@
                         <td style='width: 200px'><h3>Скорость ветра:</h3></td>
                         <td style='width: 100px'><h3> {{myitem.mea_speed}} </h3></td>
                     </tr>
-                </table>
+                   <tr>
+                        <td style='width: 200px'><h3>Азимут:</h3></td>
+                        <td style='width: 100px'><h3> {{myitem.angle}} </h3></td>
+                    </tr>
+
+				</table>
             </td>
-        </tr>
+		</tr>
     </table>
     <h5>{{myitem.compass.text}}</h5>
     <h5>{{myitem.quality_text}}</h5>
@@ -42,7 +50,4 @@
             ПРЕВЫШЕНА АВАРИЙНАЯ УСТАВКА!!!
         </div>
     </div>
-
-    <!--    <h2> {{item}}</h2>
-    -->
 </div>

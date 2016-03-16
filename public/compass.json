@@ -1,33 +1,41 @@
 {
   "s" : {
+	"angle" :"0",
     "link" : "images/s.gif",
     "text" : "С севера на юг"
   },
   "n" : {
+	"angle" :"180",
     "link" : "images/n.gif",
     "text" : "С юга на север"
   },
   "e" : {
+	"angle" :"270",
     "link" : "images/e.gif",
     "text" : "С запада на восток"
   },
   "w" : {
+	"angle" :"90",
     "link" : "images/w.gif",
     "text" : "С востока на запад"
   },
   "se" : {
+	"angle" :"315",
     "link" : "images/se.gif",
     "text" : "С северо-запада на юго-восток"
   },
   "sw" : {
+	"angle" :"45",
     "link" : "images/sw.gif",
     "text" : "С северо-востока на юго-запад"
   },
   "ne" : {
+	"angle" :"225",
     "link" : "images/ne.gif",
     "text" : "С юго-запада на северо-восток"
   },
   "nw" : {
+	"angle" :"",
     "link" : "images/nw.gif",
     "text" : "С юго-востока на северо-запад"
   }

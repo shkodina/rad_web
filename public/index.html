@@ -22,16 +22,9 @@
 
 <h1>{{main.title}}</h1>
 
-<div class="alert alert-success" role="alert" ng-if="main.cur_mea">
-    Current Item: <strong>{{main.cur_mea.kks}}</strong>
-    <button type="button" class="close" ng-click="main.setCurrentItem(null)">&times;</button>
-</div>
 <hr/>
 
-
 <div item class="well item" ng-repeat="myitem in main.meas" ></div>
-
-
 
 </body>
 
