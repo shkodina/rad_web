@@ -2,11 +2,11 @@
   "mea1" : {
     "kks" : "KKS1",
     "mea_t" : "1.0e+10",
-    "mea_speed" : "1.0e+10",
+    "mea_speed" : "0.25",
     "quality" : "1",
     "threshold" : "0",
     "high" : "6",
-    "angle" : "90"
+    "angle" : "129"
 	, "timestamp" : "98489413214"
   },
   "mea2" : {

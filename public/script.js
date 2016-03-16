@@ -49,6 +49,7 @@ angular.module('exercises', [
 				console.log('getCompasByAngle left = ', left);
 				console.log('getCompasByAngle right = ', right);
 
+				
 				if (left > right) { // fucking north
 					if ((angle >= 0 && angle < right) || (angle >= left && angle < 360)){
 						return i;
