@@ -441,3 +441,326 @@ ul.sideMenu {
   background: #555 url(../images/bg/gradient.jpg) repeat-x bottom left; 
 }
 
+#compass {
+  width: 190px;
+  height: 190px;
+  background-image:url('../images/44nyA_50.jpg');
+  position: relative;
+}
+
+#arrow0 {
+  width: 180px;
+  height: 10px;
+  background-color: #ff5329;
+  position: absolute;
+  top: 90px;
+  left: 5px;
+  -webkit-transform:rotate(90deg);
+  -moz-transform:rotate(90deg);
+  -o-transform:rotate(90deg);
+  -ms-transform:rotate(90deg);
+
+  -moz-transition: all 1s ease;
+  -webkit-transition: all 1s ease;
+  -o-transition: all 1s ease;
+  transition: all 1s ease;
+}
+#arrow1 {
+  width: 180px;
+  height: 10px;
+  background-color: #ff5329;
+  position: absolute;
+  top: 90px;
+  left: 5px;
+  -webkit-transform:rotate(100deg);
+  -moz-transform:rotate(100deg);
+  -o-transform:rotate(100deg);
+  -ms-transform:rotate(100deg);
+
+  -moz-transition: all 1s ease;
+  -webkit-transition: all 1s ease;
+  -o-transition: all 1s ease;
+  transition: all 1s ease;
+}
+#arrow2 {
+  width: 180px;
+  height: 10px;
+  background-color: #ff5329;
+  position: absolute;
+  top: 90px;
+  left: 5px;
+  -webkit-transform:rotate(110deg);
+  -moz-transform:rotate(110deg);
+  -o-transform:rotate(110deg);
+  -ms-transform:rotate(110deg);
+
+  -moz-transition: all 1s ease;
+  -webkit-transition: all 1s ease;
+  -o-transition: all 1s ease;
+  transition: all 1s ease;
+}
+#arrow3 {
+  width: 180px;
+  height: 10px;
+  background-color: #ff5329;
+  position: absolute;
+  top: 90px;
+  left: 5px;
+  -webkit-transform:rotate(120deg);
+  -moz-transform:rotate(120deg);
+  -o-transform:rotate(120deg);
+  -ms-transform:rotate(120deg);
+
+  -moz-transition: all 1s ease;
+  -webkit-transition: all 1s ease;
+  -o-transition: all 1s ease;
+  transition: all 1s ease;
+}
+#arrow4 {
+  width: 180px;
+  height: 10px;
+  background-color: #ff5329;
+  position: absolute;
+  top: 90px;
+  left: 5px;
+  -webkit-transform:rotate(130deg);
+  -moz-transform:rotate(130deg);
+  -o-transform:rotate(130deg);
+  -ms-transform:rotate(130deg);
+
+  -moz-transition: all 1s ease;
+  -webkit-transition: all 1s ease;
+  -o-transition: all 1s ease;
+  transition: all 1s ease;
+}
+#arrow5 {
+  width: 180px;
+  height: 10px;
+  background-color: #ff5329;
+  position: absolute;
+  top: 90px;
+  left: 5px;
+  -webkit-transform:rotate(140deg);
+  -moz-transform:rotate(140deg);
+  -o-transform:rotate(140deg);
+  -ms-transform:rotate(140deg);
+
+  -moz-transition: all 1s ease;
+  -webkit-transition: all 1s ease;
+  -o-transition: all 1s ease;
+  transition: all 1s ease;
+}
+#arrow6 {
+  width: 180px;
+  height: 10px;
+  background-color: #ff5329;
+  position: absolute;
+  top: 90px;
+  left: 5px;
+  -webkit-transform:rotate(150deg);
+  -moz-transform:rotate(150deg);
+  -o-transform:rotate(150deg);
+  -ms-transform:rotate(150deg);
+
+  -moz-transition: all 1s ease;
+  -webkit-transition: all 1s ease;
+  -o-transition: all 1s ease;
+  transition: all 1s ease;
+}
+#arrow7 {
+  width: 180px;
+  height: 10px;
+  background-color: #ff5329;
+  position: absolute;
+  top: 90px;
+  left: 5px;
+  -webkit-transform:rotate(160deg);
+  -moz-transform:rotate(160deg);
+  -o-transform:rotate(160deg);
+  -ms-transform:rotate(160deg);
+
+  -moz-transition: all 1s ease;
+  -webkit-transition: all 1s ease;
+  -o-transition: all 1s ease;
+  transition: all 1s ease;
+}
+#arrow8 {
+  width: 180px;
+  height: 10px;
+  background-color: #ff5329;
+  position: absolute;
+  top: 90px;
+  left: 5px;
+  -webkit-transform:rotate(170deg);
+  -moz-transform:rotate(170deg);
+  -o-transform:rotate(170deg);
+  -ms-transform:rotate(170deg);
+
+  -moz-transition: all 1s ease;
+  -webkit-transition: all 1s ease;
+  -o-transition: all 1s ease;
+  transition: all 1s ease;
+}
+#arrow9 {
+  width: 180px;
+  height: 10px;
+  background-color: #ff5329;
+  position: absolute;
+  top: 90px;
+  left: 5px;
+  -webkit-transform:rotate(180deg);
+  -moz-transform:rotate(180deg);
+  -o-transform:rotate(180deg);
+  -ms-transform:rotate(180deg);
+
+  -moz-transition: all 1s ease;
+  -webkit-transition: all 1s ease;
+  -o-transition: all 1s ease;
+  transition: all 1s ease;
+}
+#arrow10 {
+  width: 180px;
+  height: 10px;
+  background-color: #ff5329;
+  position: absolute;
+  top: 90px;
+  left: 5px;
+  -webkit-transform:rotate(190deg);
+  -moz-transform:rotate(190deg);
+  -o-transform:rotate(190deg);
+  -ms-transform:rotate(190deg);
+
+  -moz-transition: all 1s ease;
+  -webkit-transition: all 1s ease;
+  -o-transition: all 1s ease;
+  transition: all 1s ease;
+}
+#arrow11 {
+  width: 180px;
+  height: 10px;
+  background-color: #ff5329;
+  position: absolute;
+  top: 90px;
+  left: 5px;
+  -webkit-transform:rotate(200deg);
+  -moz-transform:rotate(200deg);
+  -o-transform:rotate(200deg);
+  -ms-transform:rotate(200deg);
+
+  -moz-transition: all 1s ease;
+  -webkit-transition: all 1s ease;
+  -o-transition: all 1s ease;
+  transition: all 1s ease;
+}
+#arrow12 {
+  width: 180px;
+  height: 10px;
+  background-color: #ff5329;
+  position: absolute;
+  top: 90px;
+  left: 5px;
+  -webkit-transform:rotate(210deg);
+  -moz-transform:rotate(210deg);
+  -o-transform:rotate(210deg);
+  -ms-transform:rotate(210deg);
+
+  -moz-transition: all 1s ease;
+  -webkit-transition: all 1s ease;
+  -o-transition: all 1s ease;
+  transition: all 1s ease;
+}
+#arrow13 {
+  width: 180px;
+  height: 10px;
+  background-color: #ff5329;
+  position: absolute;
+  top: 90px;
+  left: 5px;
+  -webkit-transform:rotate(220deg);
+  -moz-transform:rotate(220deg);
+  -o-transform:rotate(220deg);
+  -ms-transform:rotate(220deg);
+
+  -moz-transition: all 1s ease;
+  -webkit-transition: all 1s ease;
+  -o-transition: all 1s ease;
+  transition: all 1s ease;
+}
+#arrow14 {
+  width: 180px;
+  height: 10px;
+  background-color: #ff5329;
+  position: absolute;
+  top: 90px;
+  left: 5px;
+  -webkit-transform:rotate(230deg);
+  -moz-transform:rotate(230deg);
+  -o-transform:rotate(230deg);
+  -ms-transform:rotate(230deg);
+
+  -moz-transition: all 1s ease;
+  -webkit-transition: all 1s ease;
+  -o-transition: all 1s ease;
+  transition: all 1s ease;
+}
+#arrow15 {
+  width: 180px;
+  height: 10px;
+  background-color: #ff5329;
+  position: absolute;
+  top: 90px;
+  left: 5px;
+  -webkit-transform:rotate(240deg);
+  -moz-transform:rotate(240deg);
+  -o-transform:rotate(240deg);
+  -ms-transform:rotate(240deg);
+
+  -moz-transition: all 1s ease;
+  -webkit-transition: all 1s ease;
+  -o-transition: all 1s ease;
+  transition: all 1s ease;
+}
+#arrow16 {
+  width: 180px;
+  height: 10px;
+  background-color: #ff5329;
+  position: absolute;
+  top: 90px;
+  left: 5px;
+  -webkit-transform:rotate(250deg);
+  -moz-transform:rotate(250deg);
+  -o-transform:rotate(250deg);
+  -ms-transform:rotate(250deg);
+
+  -moz-transition: all 1s ease;
+  -webkit-transition: all 1s ease;
+  -o-transition: all 1s ease;
+  transition: all 1s ease;
+}
+#arrow17 {
+  width: 180px;
+  height: 10px;
+  background-color: #ff5329;
+  position: absolute;
+  top: 90px;
+  left: 5px;
+  -webkit-transform:rotate(260deg);
+  -moz-transform:rotate(260deg);
+  -o-transform:rotate(260deg);
+  -ms-transform:rotate(260deg);
+
+  -moz-transition: all 1s ease;
+  -webkit-transition: all 1s ease;
+  -o-transition: all 1s ease;
+  transition: all 1s ease;
+}
+
+/*
+
+
+#compass:hover #arrow {
+  -webkit-transform:rotate(150deg);
+  -moz-transform:rotate(150deg);
+  -o-transform:rotate(150deg);
+  -ms-transform:rotate(150deg);
+}*/

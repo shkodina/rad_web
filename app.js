@@ -195,6 +195,6 @@ setInterval(function () {
         console.log("From parser error", error);
     }
 
-}, 5000);
+}, 2000);
 
 module.exports = app;

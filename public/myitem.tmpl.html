@@ -1,21 +1,34 @@
 <table>
     <tr>
         <td style='width: 200px'>
-            <img src="{{myitem.compass.link}}" alt=""/>
+            <!--
+                        <img src="{{myitem.compass.link}}" alt=""/>
+            -->
+            <div id="compass">
+                <div id="{{myitem.test}}">
+                </div>
+ <!--            <div id="compass">
+                <div id="arrow  -webkit-transform:rotate({{myitem.compassangle}}deg);
+                                -moz-transform:rotate({{myitem.compassangle}}deg);
+                                -o-transform:rotate({{myitem.compassangle}}deg);
+                                -ms-transform:rotate({{myitem.compassangle}}deg);">
+
+                </div>
+ -->           </div>
         </td>
         <td style='width: 300px'>
             <table>
                 <tr>
                     <td style='width: 50px'><h1>Канал:</h1></td>
-                    <td ><h1>{{myitem.kks}}</h1></td>
+                    <td><h1>{{myitem.kks}}</h1></td>
                 </tr>
                 <tr>
                     <td style='width: 50px'><h1>Время:</h1></td>
-                    <td ><h1>{{myitem.date}}</h1></td>
+                    <td><h1>{{myitem.date}}</h1></td>
                 </tr>
                 <tr>
                     <td style='width: 50px'><h1>Высота:</h1></td>
-                    <td ><h1> {{myitem.high}} м.</h1></td>
+                    <td><h1> {{myitem.high}} м.</h1></td>
                 </tr>
             </table>
         </td>
