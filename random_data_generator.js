@@ -42,8 +42,8 @@ var rnd_data_generator = {
 				olddata[i].angle = (+(olddata[i].angle) + 360).toFixed(2);
 			}
 
-			olddata[i].quality = (Math.random() > 0.5) ? "1" : "0";
-			olddata[i].threshold = Math.floor((Math.random() * 100000) % 3);
+			//olddata[i].quality = (Math.random() > 0.5) ? "1" : "0";
+			//olddata[i].threshold = Math.floor((Math.random() * 100000) % 3);
 		}
 		return olddata;
 	}
