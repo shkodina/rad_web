@@ -5057,7 +5057,8 @@ a.thumbnail:hover, a.thumbnail:focus, a.thumbnail.active {
 
 .alert-warning {
     color: #8a6d3b;
-    background-color: #fcf8e3;
+    //background-color: #fcf8e3;
+    background-color: #F3F043;
     border-color: #faebcc
 }
 
@@ -5071,7 +5072,8 @@ a.thumbnail:hover, a.thumbnail:focus, a.thumbnail.active {
 
 .alert-danger {
     color: #a94442;
-    background-color: #f2dede;
+    //background-color: #f2dede;
+	background-color: #F6BAA6;
     border-color: #ebccd1
 }
 
