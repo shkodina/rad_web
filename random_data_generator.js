@@ -31,8 +31,9 @@ var rnd_data_generator = {
 	
 	, generateByOld : function(olddata){
 		for (var i in olddata){
-			olddata[i].mea_speed = (+(olddata[i].mea_speed) + +(getRandomArbitrary(-5, 5))).toFixed(2);
-			olddata[i].mea_t = (+(olddata[i].mea_t) + +(getRandomArbitrary(-8, 8))).toFixed(2);
+			olddata[i].mea_speed = (+(olddata[i].mea_speed) + +(getRandomArbitrary(-2, 2))).toFixed(2);
+				olddata[i].mea_speed = (+(olddata[i].mea_speed) < 0) ? (-(+(olddata[i].mea_speed))) : olddata[i].mea_speed;
+			olddata[i].mea_t = (+(olddata[i].mea_t) + +(getRandomArbitrary(-2, 2))).toFixed(2);
 			olddata[i].angle = (+(olddata[i].angle) + +(getRandomArbitrary(-20, 20))).toFixed(2);
 
 			if (+(olddata[i].angle) > 360){

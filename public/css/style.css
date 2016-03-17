@@ -12,7 +12,8 @@ body {
   font: 400 0.8em verdana, arial, sans-serif;
   line-height: 170%;
 
-  background: #000 url(../images/bg/bg.jpg) repeat-x top left;
+  //background: #000 url(../images/bg/bg.jpg) repeat-x top left;
+  background: #C6C6C6 url(../images/bg/bg.jpg) repeat-x top left;
   color: #EEE;
 }
 
@@ -439,6 +440,7 @@ ul.sideMenu {
 .gradient {
   margin-bottom: 2em;
   background: #555 url(../images/bg/gradient.jpg) repeat-x bottom left; 
+  //background: #444444 url(../images/bg/gradient2.jpg) repeat-x bottom left; 
 }
 
 #compass {
