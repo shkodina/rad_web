@@ -30,10 +30,30 @@ var rnd_data_generator = {
 	}
 	
 	, generateByOld : function(olddata){
+	
+		var speedmax = 25.0,
+			speedmin = 0.0,
+			tmax = 25.0,
+			tmin = -30.0;
+	
 		for (var i in olddata){
 			olddata[i].mea_speed = (+(olddata[i].mea_speed) + +(getRandomArbitrary(-2, 2))).toFixed(2);
-				olddata[i].mea_speed = (+(olddata[i].mea_speed) < 0) ? (-(+(olddata[i].mea_speed))) : olddata[i].mea_speed;
-			olddata[i].mea_t = (+(olddata[i].mea_t) + +(getRandomArbitrary(-2, 2))).toFixed(2);
+			olddata[i].mea_speed = (+(olddata[i].mea_speed) < speedmin)
+									? (-(+(olddata[i].mea_speed))) 
+									: olddata[i].mea_speed;
+			olddata[i].mea_speed = (+(olddata[i].mea_speed) > speedmax) 
+									? (((+(olddata[i].mea_speed)) - +(getRandomArbitrary(0, 2))).toFixed(2)) 
+									: olddata[i].mea_speed;
+				
+				
+			olddata[i].mea_t = (+(olddata[i].mea_t) + +(getRandomArbitrary(-2, 2))).toFixed(2);	
+			if ((+(olddata[i].mea_t)) > tmax){
+				olddata[i].mea_t = (+(olddata[i].mea_t) - +(getRandomArbitrary(0, 2))).toFixed(2);
+			}
+			if ((+(olddata[i].mea_t)) < tmin){
+				olddata[i].mea_t = (+(olddata[i].mea_t) + +(getRandomArbitrary(0, 2))).toFixed(2);
+			}
+			
 			olddata[i].angle = (+(olddata[i].angle) + +(getRandomArbitrary(-20, 20))).toFixed(2);
 
 			if (+(olddata[i].angle) > 360){
