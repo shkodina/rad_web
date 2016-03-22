@@ -95,12 +95,10 @@ angular.module('exercises', [
 			mes[index].date = getStringDateFromTimestamp(mes[index].timestamp);
 			mes[index].compassangle = Math.floor(+(mes[index].angle));
 
-			if ((+(mes[index].angle)) >= 180){
-				mes[index].test = "arrow" +  Math.floor((+(mes[index].angle) - 180) / 10) ;
-			}else{
-				mes[index].test = "arrow" +  Math.floor(+(mes[index].angle) / 10) ;
+			mes[index].test2 = 90 +  +(Math.floor(+(mes[index].angle)));
+			if((+(mes[index].test2)) > 360){
+				mes[index].test2 = (+(mes[index].test2)) - 360;
 			}
-
 
 			//console.log('mes[index].test = ', mes[index].test)
 		}

@@ -1,8 +1,13 @@
-<!DOCTYPE html>
-<html ng-app="exercises">
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-AU" ng-app="exercises">
 
 <head>
+    <title>RadicoWEB</title>
+
     <link rel="stylesheet" href="stylesheets/bootstrap.min.css"/>
+
     <script src="javascripts/jquery.min.js"></script>
     <script src="javascripts/angular.js"></script>
     <script src="javascripts/angular-animate.js"></script>
@@ -16,17 +21,48 @@
     <link rel="stylesheet" href="stylesheets/bootstrap2.min.css"/>
 
     <script src="script.js"></script>
+
+    <meta http-equiv="content-type" content="application/xhtml+xml; charset=UTF-8"/>
+    <link rel="stylesheet" type="text/css" href="css/style.css"/>
+
+
 </head>
 
-<body class="container" ng-controller="MainCtrl as main">
+<body ng-controller="MainCtrl as main">
+<div id="content">
 
-<div id="logo"><a href="http://www.radico.ru"><img src="images/logo.png"/></a></div>
-<div id="desc">
-    ООО НПП «РАДИКО» </div>
+    <div id="header">
+        <div id="title">
+            <h1>Radico & Балаковская АЭС</h1>
+        </div>
+        <!--
+                <img src="images/bg/header_left.jpg" style="margin-left: 10%;"/></div>
+        -->
+        <img src="images/bg/Balakovo_NPP_night_700_193.jpg" style="margin-left: 10%;"/></div>
 
-<hr/>
+    <div id="mainMenu">
+        <ul class="floatLeft">
+            <li><a href="" class="here">Каскад</a></li>
+            <li><a href="" class="last">Таблица</a></li>
+        </ul>
+    </div>
 
-<div item class="well item" ng-repeat="myitem in main.meas" ></div>
+    <div id="page">
+
+
+        <div class=" floatLeft">
+            <div myitem class="gradient" ng-repeat="myitem in main.meas"></div>
+
+        </div>
+
+    </div>
+
+</div>
+<div id="footer">
+
+    <div id="width"><span class="floatLeft"> Copyright © 2016 </span> <span class="floatRight">
+
+    </div>
 
 </body>
 
