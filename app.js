@@ -168,11 +168,22 @@ function onListening() {
 //
 //***********************************************************
 //***********************************************************
-
+var fs = require('fs');
 
 var io = require('socket.io')(server);
 
 io.on('connection', function (socket) {
+    socket.on('newParamsFromUser', function(mes){
+        console.log('newParamsFromUser', mes);
+        fs.writeFileSync('./params.json', JSON.stringify(mes));
+    })
+
+    socket.on('getParamsForUser', function(mes){
+        console.log('getParamsForUser', mes);
+        socket.emit('setParamsForUser',JSON.parse(fs.readFileSync('./params.json')))
+
+    })
+
 
 });
 
@@ -180,7 +191,7 @@ io.on('connection', function (socket) {
 //***********************************************************
 //***********************************************************
 
-var fs = require('fs');
+
 
 var mea_generator = require('./random_data_generator.js');
 

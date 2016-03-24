@@ -1,0 +1,53 @@
+<table class="table">
+    <tr>
+        <td>
+            <div class="mylabel" >Минимальная высота измерений</div>
+        </td>
+        <td>
+            <input class="form-control"  type="text" ng-model="main.params.minhight">
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <div class="mylabel" >Максимальная высота измерений</div>
+        </td>
+        <td>
+            <input  class="form-control" type="text" ng-model="main.params.maxhight">
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <div class="mylabel" >Шаг Высоты</div>
+        </td>
+        <td>
+            <input class="form-control" type="text" ng-model="main.params.step">
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <div class="mylabel" >Количество уровней высоты</div>
+        </td>
+        <td>
+            <input class="form-control" type="text" ng-model="main.params.count">
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <div class="mylabel" ><abbr title="целые числа через запятую">Высоты для сокрытия</abbr></div>
+        </td>
+        <td>
+            <input class="form-control" type="text" ng-model="main.params.toemit">
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <div class="mylabel" >Период обновления данных</div>
+        </td>
+        <td>
+            <input class="form-control" type="text" ng-model="main.params.updateperiod">
+        </td>
+    </tr>
+</table>
+<button class="btn btn-default" type="submit" ng-click="main.useNewParams()">Применить</button>
+
+

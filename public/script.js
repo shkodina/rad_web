@@ -11,31 +11,91 @@ angular.module('exercises', [
 	var socket = io.connect();
 
 	var compass = {};
+
+    var params = null;
+
+
 	$.getJSON("compass.json", function (json) {
 		compass = json;
 	});
 
+    socket.on('setParamsForUser', function(mes){
+        console.log('setParamsForUser', mes);
+        params = mes;
+    });
+
+    socket.emit('getParamsForUser', 0);
+
 	return {
-		b : function () {},
-		getSocket : function () {
+        getSocket : function () {
 			return socket;
-		},
-		getCompass : function () {
+		}
+		, getCompass : function () {
 			return compass;
+		}
+		, getParams : function () {
+
+            return params;
+
 		}
 	}
 })
 .controller('MainCtrl', function ($scope, $rootScope, valueService) {
-	this.title = 'RADICO@Web';
+    var main = this;
+    main.title = 'RADICO@Web';
 
-	this.meas = {};
-	this.cur_mea = {};
+    main.meas = {};
+    main.cur_mea = {};
 
-	this.setCurrentItem = function (item) {
-		this.cur_mea = item;
+    main.setCurrentItem = function (item) {
+        main.cur_mea = item;
 	};
 
+
+    //********************************************************************
+    //********************************************************************
+    //
+    //  P A R A M S
+    //
+    //********************************************************************
+    //********************************************************************
+
+
+    main.isshowparams = null;
+    main.askParamsForSADAR = function(){
+        main.params = valueService.getParams();
+        main.isshowparams = (main.isshowparams == null) ? {} : null;
+    }
+
+    main.useNewParams = function(){
+        main.params.toemitarray = [];
+        main.params.toemit.split(",").forEach(function(item){
+            var ditem = ((+item) > 0) ? (+item) : -(+item);
+            if (ditem) {
+                main.params.toemitarray.push(+ditem);
+            }
+        })
+
+        main.params.toemit = "";
+        main.params.toemitarray.forEach(function(item){
+            main.params.toemit = main.params.toemit + item + ",";
+        })
+
+        valueService.getSocket().emit('newParamsFromUser', main.params);
+    }
+
+    //********************************************************************
+    //********************************************************************
+    //
+    //  M E A S U R E M E N T S
+    //
+    //********************************************************************
+    //********************************************************************
+
+
 	valueService.getSocket().on('printMeas', function (mes) {
+
+
 
 		function getCompasByAngle(angle) {
 			var compass = valueService.getCompass();
@@ -77,6 +137,16 @@ angular.module('exercises', [
 		}
 
 		for (var index in mes) {
+
+            //delete if need emit
+            if (main.params != null){
+                if (main.params.toemitarray.indexOf((+(mes[index].high))) > -1){
+                    delete mes[index];
+                    continue;
+                }
+            }
+
+
 			mes[index].compass = valueService.getCompass()[getCompasByAngle(mes[index].angle)];
 			//console.log("mes index compass",mes[index].compass);
 
@@ -109,14 +179,14 @@ angular.module('exercises', [
 		//console.log("printMeas", "All Ok");
 	});
 })
-.directive('item', function () {
-	return {
-		templateUrl : 'item.tmpl.html'
-	}
-})
 .directive('myitem', function () {
 	return {
 		templateUrl : 'myitem.tmpl.html'
+	}
+})
+.directive('paramsmodel', function () {
+	return {
+		templateUrl : 'paramsmodel.tmpl.html'
 	}
 })
 ;
